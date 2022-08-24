@@ -97,17 +97,17 @@ export default function App() {
         </Text>
 
         {MediaLPermission ?
-          <TouchableOpacity title="Save" onPress={savePhoto} color='green'>
-            <AntDesign name="save" size={35} color="black" />
+          <TouchableOpacity onPress={savePhoto} color='green'>
+            <AntDesign name="save" size={35} color="green" />
           </TouchableOpacity>
           : undefined}
 
-        <TouchableOpacity title="Share" onPress={sharePic} color='gray' >
-          <Entypo name="share" size={35} color="black" />
+        <TouchableOpacity onPress={sharePic} color='gray' >
+          <Entypo name="share" size={35} color="blue" />
         </TouchableOpacity>
         
-        <TouchableOpacity title="Discard" onPress={() => setPhoto(undefined)} color='red'>
-          <MaterialIcons name="cancel" size={35} color="black" />
+        <TouchableOpacity onPress={() => setPhoto(undefined)} color='red'>
+          <MaterialIcons name="cancel" size={35} color="red" />
         </TouchableOpacity>
       
       </SafeAreaView>
@@ -117,8 +117,8 @@ export default function App() {
   return (
     <Camera style={styles.container} ref={cameraRef}>
       <View style={styles.btncontainer}>
-        <TouchableOpacity title="Take Pic" onPress={takePic} >
-          <AntDesign name="camera" size={150} color="black" />
+        <TouchableOpacity onPress={takePic} >
+          <AntDesign name="camera" size={90} color="black" />
         </TouchableOpacity>
       </View>
       <StatusBar style="auto" />
@@ -130,13 +130,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+   justifyContent: 'space-between'
   },
   btncontainer: {
     alignSelf: 'center',
     alignItems: "center",
     padding: 10,
-    top: 220,
+    top: 550,
   },
   preview: {
     flex: 1,
